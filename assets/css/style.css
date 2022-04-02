@@ -1,0 +1,61 @@
+body {
+    /* background: radial-gradient(circle, rgb(228, 228, 228) 0%, rgba(0, 0, 0, 0.954) 75%); */
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    color: black;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    width: 50%;
+    
+}
+.container {
+    background-color: yellow;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    border-radius: 2rem;
+    width: 50%;
+    box-shadow: 10px 10px;
+    border: 2px solid black;
+}
+
+.highscore {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 1rem 1rem 0;
+    text-align: center;
+    justify-content: baseline;
+    background-color: orange;
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px;
+    width: 50%;
+}
+
+.timer {
+    display: flex;
+    flex-direction: row;
+    margin: 1rem 0 1rem 1rem;
+    text-align: center;
+    justify-content: baseline;
+    background-color: orange;
+    padding: 1rem;
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 5px 5px;
+    width: 50%;
+}
+
+.quizarea {
+    width: 100%;
+    padding: 1rem;
+}
