@@ -23,7 +23,7 @@ header {
     align-items: center;
     border-radius: 2rem;
     width: 50%;
-    box-shadow: 10px 10px;
+    box-shadow: 5px 5px;
     border: 2px solid black;
 }
 
@@ -58,4 +58,12 @@ header {
 .quizarea {
     width: 100%;
     padding: 1rem;
+    align-items: center;
+}
+
+button {
+    width: 75%;
+    padding: 10px;
+    align-items: center;
+    margin: 10px;
 }
