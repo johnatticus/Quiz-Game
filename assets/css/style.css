@@ -19,6 +19,29 @@ header {
     width: 50%;
     
 }
+
+a {
+    text-decoration: none;
+
+}
+
+a:hover {
+    font-style: italic;
+}
+
+button {
+    width: 35%;
+    padding: 10px;
+    align-items: center;
+    margin: 10px;
+}
+
+img {
+    border: 2px solid black;
+    border-radius: 10px;
+    box-shadow: 2px 2px;
+}
+
 .container {
     background-color: yellow;
     display: flex;
@@ -59,15 +82,14 @@ header {
     width: 50%;
 }
 
-.quizarea {
+.quizstart {
     width: 100%;
     padding: 1rem;
     align-items: center;
+    text-align: center;
+    font-size: large;
 }
 
-button {
-    width: 75%;
-    padding: 10px;
-    align-items: center;
-    margin: 10px;
+.hide {
+    display: none;
 }
