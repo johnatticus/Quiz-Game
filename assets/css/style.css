@@ -7,6 +7,10 @@ body {
     align-items: center;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     color: black;
+    background-image: url("../images/codebackground.jpg");
+    background-size: cover;
+    background-position: center;
+    
 }
 
 header {
