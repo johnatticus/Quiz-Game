@@ -1,12 +1,19 @@
 // any global variables needed
+var questionsIndex = 0;
+
+var time = questions.length * 15;
+// for keeping a timer and score?
+var timerId;
 
 // variables to traverse the DOM aka html
 var questionsEl = document.getElementById("questions");
 var choicesEl = document.getElementById("answers");
 var timeEl = document.getElementById("time");
 var initialsEl = document.getElementById("initials");
-var startBtn = document.getElementById("start");
+var startBtn = document.querySelector(".start");
 var submitBtn = document.getElementById("submit");
+var quizStart = document.getElementById(".quizstart");
+var scoreScreen = document.getElementById(".score-screen");
 
 // questions for the quiz
 var questions = [
@@ -17,11 +24,11 @@ var questions = [
     },
     {
         question: "What is Gonzo's favorite food?",
-        choices: ["Blue Buffalo dry fooed", "Fresh Pet", "Chocolate Cake", "String Cheese"],
+        choices: ["Blue Buffalo Dry Food", "Fresh Pet", "Chocolate Cake", "String Cheese"],
         answer: "Fresh Pet"
     },
     {
-        question: "What does Gonzo like more?",
+        question: "What does Gonzo like most?",
         choices: ["Fetching", "Fighting", "Barking", "All of the Above"],
         answer: "All of the Above"
     },
@@ -31,8 +38,19 @@ var questions = [
         answer: "No One"
     },
 ]
+
 //function to start the quiz
+function beginQuiz() {
+    var startQuizEl = document.getElementById("quizStart");
+    startQuizEl.setAttribute("class", ".hide");
 
-//function to show the questions and log results
+    score-screenEl.removeAttribute("class");
+}
 
+//function to get the questions
+function getQuestions() {
+
+}
+
+startBtn.addEventListener("click", beginQuiz);
 //function to create the score and push it to high scores
