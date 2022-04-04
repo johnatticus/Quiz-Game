@@ -6,13 +6,13 @@ var time = questions.length * 15;
 var timerId;
 
 // variables to traverse the DOM aka html
-var questionsEl = document.getElementById("questions");
+var quizBegin = document.getElementById("quizarea");
 var choicesEl = document.getElementById("answers");
 var timeEl = document.getElementById("time");
 var initialsEl = document.getElementById("initials");
-var startBtn = document.querySelector(".start");
+var startBtn = document.querySelector("start");
 var submitBtn = document.getElementById("submit");
-var quizStart = document.getElementById(".quizstart");
+var startScreen = document.getElementById("startscreen");
 var scoreScreen = document.getElementById(".score-screen");
 
 // questions for the quiz
@@ -39,12 +39,18 @@ var questions = [
     },
 ]
 
+startBtn.addEventListener("click", beginQuiz);
+
+
 //function to start the quiz
 function beginQuiz() {
-    var startQuizEl = document.getElementById("quizStart");
-    startQuizEl.setAttribute("class", ".hide");
+    startScreen.classList.add('hide')
+    quizBegin.classList.remove('hide')
 
-    score-screenEl.removeAttribute("class");
+    // var startQuizEl = document.getElementById("quizStart");
+    // startQuizEl.setAttribute("class", ".hide");
+
+    // score-screenEl.removeAttribute("class");
 }
 
 //function to get the questions
@@ -52,5 +58,4 @@ function getQuestions() {
 
 }
 
-startBtn.addEventListener("click", beginQuiz);
 //function to create the score and push it to high scores
