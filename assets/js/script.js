@@ -7,14 +7,18 @@
 
 // variables to traverse the DOM aka html
 var quizBegin = document.getElementById("quizarea");
+var questionEl = document.getElementById("question")
 var choicesEl = document.getElementById("answers");
 var timeEl = document.getElementById("time");
 var initialsEl = document.getElementById("initials");
 var startBtn = document.getElementById("start");
 var submitBtn = document.getElementById("submit");
 var startScreen = document.getElementById("startscreen");
-var scoreScreen = document.getElementById(".score-screen");
+var scoreScreen = document.getElementById("score-screen");
+var answerChoices = document.getElementById("answers")
+var answerButtons = document.getElementById("answer-button")
 
+let shuffledQuestions, currentQuestionIndex
 // questions for the quiz
 var questions = [
     {
@@ -48,12 +52,23 @@ function beginQuiz() {
     console.log("Started")
     startScreen.classList.add('hide')
     quizBegin.classList.remove('hide')
+    shuffledQuestions = questions.sort(() => Math.random() - .5)
+    currentQuestionIndex = 0
     getQuestions()
 }
 
 //function to get the questions
 function getQuestions() {
-
+    showQuestion(shuffledQuestions[currentQuestionIndex])
+        // document.write ( question );
+        // var options = questions[i].choices;
+        // document.body.appendChild(document.createElement("br"));
 }
 
-//function to create the score and push it to high scores
+// puts the random qauestion picked on the page
+function showQuestion(question) {
+    questionEl.innerText = question.question
+}
+    
+
+// function to create the score and push it to high score
