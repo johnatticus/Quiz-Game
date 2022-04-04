@@ -10,13 +10,15 @@ body {
     background-image: url("../images/codebackground.jpg");
     background-size: cover;
     background-position: center;
+    max-width: 75%;
+   
     
 }
 
 header {
     display: flex;
     flex-direction: row;
-    width: 50%;
+    width: 75%;
     
 }
 
@@ -49,9 +51,12 @@ img {
     justify-content: center;
     align-items: center;
     border-radius: 2rem;
-    width: 50%;
+    width: 75%;
+     max-width: 75%;
     box-shadow: 5px 5px;
     border: 2px solid black;
+    width: 100vh;
+    height: 100vh;
 }
 
 .highscore {
@@ -65,7 +70,7 @@ img {
     border: 2px solid black;
     border-radius: 10px;
     box-shadow: 5px 5px;
-    width: 50%;
+    width: 50vh;
 }
 
 .timer {
@@ -79,7 +84,8 @@ img {
     border: 2px solid black;
     border-radius: 10px;
     box-shadow: 5px 5px;
-    width: 50%;
+    width: 50vh;
+
 }
 
 .quizstart {
@@ -88,6 +94,9 @@ img {
     align-items: center;
     text-align: center;
     font-size: large;
+    display: flex;
+    flex-direction: column;
+    width: 100vh;   
 }
 
 .hide {
