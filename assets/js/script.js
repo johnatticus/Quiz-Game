@@ -1,16 +1,16 @@
 // any global variables needed
-var questionsIndex = 0;
+// var questionsIndex = 0;
 
-var time = questions.length * 15;
+// var time = questions.length * 15;
 // for keeping a timer and score?
-var timerId;
+// var timerId;
 
 // variables to traverse the DOM aka html
 var quizBegin = document.getElementById("quizarea");
 var choicesEl = document.getElementById("answers");
 var timeEl = document.getElementById("time");
 var initialsEl = document.getElementById("initials");
-var startBtn = document.querySelector("start");
+var startBtn = document.getElementById("start");
 var submitBtn = document.getElementById("submit");
 var startScreen = document.getElementById("startscreen");
 var scoreScreen = document.getElementById(".score-screen");
@@ -39,18 +39,16 @@ var questions = [
     },
 ]
 
-startBtn.addEventListener("click", beginQuiz);
+// listen for the user to click 'Start' to begin quiz
+startBtn.addEventListener('click', beginQuiz);
 
 
-//function to start the quiz
+//function to start the quiz and bring up questions
 function beginQuiz() {
+    console.log("Started")
     startScreen.classList.add('hide')
     quizBegin.classList.remove('hide')
-
-    // var startQuizEl = document.getElementById("quizStart");
-    // startQuizEl.setAttribute("class", ".hide");
-
-    // score-screenEl.removeAttribute("class");
+    getQuestions()
 }
 
 //function to get the questions
