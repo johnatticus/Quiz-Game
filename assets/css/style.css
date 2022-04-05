@@ -10,7 +10,7 @@ body {
     background-image: url("../images/codebackground.jpg");
     background-size: cover;
     background-position: center;
-    max-width: 75%;
+    /* max-width: 75%; */
    
     
 }
@@ -19,6 +19,7 @@ header {
     display: flex;
     flex-direction: row;
     width: 75%;
+    justify-content: center;
     
 }
 
@@ -52,7 +53,7 @@ img {
     align-items: center;
     border-radius: 2rem;
     width: 75%;
-     max-width: 75%;
+    max-width: 75%;
     box-shadow: 5px 5px;
     border: 2px solid black;
     width: 100vh;
@@ -64,7 +65,7 @@ img {
     flex-direction: row;
     margin: 1rem 1rem 1rem 0;
     text-align: center;
-    justify-content: baseline;
+    justify-content: center;
     background-color: orange;
     padding: 1rem;
     border: 2px solid black;
@@ -78,7 +79,7 @@ img {
     flex-direction: row;
     margin: 1rem 0 1rem 1rem;
     text-align: center;
-    justify-content: baseline;
+    justify-content: center;
     background-color: orange;
     padding: 1rem;
     border: 2px solid black;
@@ -102,3 +103,8 @@ img {
 .hide {
     display: none;
 }
+
+@media screen and (max-width: 768px) {
+
+
+}    

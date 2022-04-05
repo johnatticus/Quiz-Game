@@ -13,13 +13,16 @@ var startBtn = document.getElementById("start");
 // quiz variables
 var quizBegin = document.getElementById("quizarea");
 var questionEl = document.getElementById("question")
-var answerChoices = document.getElementById("answers")
+var answerChoices = document.getElementById("answers") // this may be redundant due to 4 answer buttons used
 
 // var for the four answer buttons
 var answerButton1 = document.getElementById("answer-button1")
 var answerButton1 = document.getElementById("answer-button2")
 var answerButton1 = document.getElementById("answer-button3")
 var answerButton1 = document.getElementById("answer-button4")
+
+// next question button
+var nextQuestionButton = document.getElementById("next-question")
 
 // show YES or NO when a answer choice is picked
 var yesOrNo = document.getElementById("yes-no")

@@ -7,3 +7,39 @@ function getQuestions() {
         // document.body.appendChild(document.createElement("br"));
 }
 
+QUESTIONS AND ANSWERS VAR SET UP DIFFERENTLY:
+
+var questions = [
+    {
+        question: "What is Gonzo's preferred nickname?",
+        choice1: "Nana",
+        choice2: "Pingo",
+        choice3: "Nano",
+        choice4: "The Gonz",
+        answer: 3
+    },
+    {
+        question: "What is Gonzo's favorite food?",
+        choice1: "Blue Buffalo Dry Food",
+        choice2: "Fresh Pet",
+        choice3: "Chocolate Cake",
+        choice4: "String Cheese",
+        answer: 2
+    },
+    {
+        question: "What does Gonzo like most?",
+        choice1: "Fetching",
+        choice2: "Fighting",
+        choice3: "Barking",
+        choice4: "All of the Above",
+        answer: 4
+    },
+    {
+        question: "Who can defeat Gonzo?",
+        choice1: "No One",
+        choice2: "Mike Tyson",
+        choice3: "Liam Neeson",
+        choice4: "His Veteranarian",
+        answer: 1
+    },
+]
