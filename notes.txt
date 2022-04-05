@@ -1,0 +1,9 @@
+OLD CODE I REMOVED BUT WANTED TO REFERENCE
+
+//function to get the questions
+function getQuestions() {
+        // document.write ( question );
+        // var options = questions[i].choices;
+        // document.body.appendChild(document.createElement("br"));
+}
+

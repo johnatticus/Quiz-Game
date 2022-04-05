@@ -5,20 +5,29 @@
 // for keeping a timer and score?
 // var timerId;
 
-// variables to traverse the DOM aka html
+
+// start screen variables
+var startScreen = document.getElementById("startscreen");
+var startBtn = document.getElementById("start");
+
+// quiz variables
 var quizBegin = document.getElementById("quizarea");
 var questionEl = document.getElementById("question")
-var choicesEl = document.getElementById("answers");
-var timerArea = document.getElementById("timeleft");
-var initialsEl = document.getElementById("initials");
-var startBtn = document.getElementById("start");
-var submitBtn = document.getElementById("submit");
-var startScreen = document.getElementById("startscreen");
-var scoreScreen = document.getElementById("score-screen");
 var answerChoices = document.getElementById("answers")
 var answerButtons = document.getElementById("answer-button")
 
-// let shuffledQuestions
+// show YES or NO when a answer choice is picked
+var yesOrNo = document.getElementById("yes-no")
+
+// time variable
+var timerArea = document.getElementById("timeleft");
+
+// high score vars
+var initialsEl = document.getElementById("initials");
+var submitBtn = document.getElementById("submit");
+
+// view high scores
+var scoreScreen = document.getElementById("score-screen");
 
 // variable to make sure question index starts at 0 so the quiz begins with the first question in array
 var currentQuestionIndex = 0
@@ -26,7 +35,6 @@ var currentQuestionIndex = 0
 let currentQuestion
 // timer variable
 // timer countdown variable
-var timerCount
 
 
 
@@ -58,38 +66,30 @@ var questions = [
 startBtn.addEventListener('click', beginQuiz);
 
 
-//function to start the quiz and bring up questions
+// function to start the timer and bring up the first question
+// hides the start area aka startScreen and un-hides the quest area aka quizBegin
+// indexes the first question in array to a currentQuestionIndex
+// moves to next function that writes the current question to the html
 function beginQuiz() {
     startTimer()
     console.log("Started")
     startScreen.classList.add('hide')
     quizBegin.classList.remove('hide')
     currentQuestion = questions[currentQuestionIndex]
-    getQuestions()
-    
-
-}
-
-//function to get the questions
-function getQuestions() {
     showQuestion(currentQuestion)
-        // document.write ( question );
-        // var options = questions[i].choices;
-        // document.body.appendChild(document.createElement("br"));
 }
 
 // puts the random qauestion picked on the page
 function showQuestion(question) {
     questionEl.innerText = question.question
     // questions.forEach(choices) 
-    console.log(answer)
-        
     }
 
-// function to start a timer count    
+// function to start a timer count
+// sets a var to the total time for the quiz    
 function startTimer() {
     // Sets timer
-    var timeLeft = 10;
+    var timeLeft = 11;
     setInterval(function() {
     timeLeft--;
     if (timeLeft >= 0) {
