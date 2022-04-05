@@ -14,7 +14,12 @@ var startBtn = document.getElementById("start");
 var quizBegin = document.getElementById("quizarea");
 var questionEl = document.getElementById("question")
 var answerChoices = document.getElementById("answers")
-var answerButtons = document.getElementById("answer-button")
+
+// var for the four answer buttons
+var answerButton1 = document.getElementById("answer-button1")
+var answerButton1 = document.getElementById("answer-button2")
+var answerButton1 = document.getElementById("answer-button3")
+var answerButton1 = document.getElementById("answer-button4")
 
 // show YES or NO when a answer choice is picked
 var yesOrNo = document.getElementById("yes-no")
@@ -82,7 +87,10 @@ function beginQuiz() {
 // puts the random qauestion picked on the page
 function showQuestion(question) {
     questionEl.innerText = question.question
-    // questions.forEach(choices) 
+    array.forEach(choices => {
+        answerButton1.innerText = question.choices(0)
+        
+    });
     }
 
 // function to start a timer count
