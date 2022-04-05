@@ -17,9 +17,9 @@ var answerChoices = document.getElementById("answers") // this may be redundant 
 
 // var for the four answer buttons
 var answerButton1 = document.getElementById("answer-button1")
-var answerButton1 = document.getElementById("answer-button2")
-var answerButton1 = document.getElementById("answer-button3")
-var answerButton1 = document.getElementById("answer-button4")
+var answerButton2 = document.getElementById("answer-button2")
+var answerButton3 = document.getElementById("answer-button3")
+var answerButton4 = document.getElementById("answer-button4")
 
 // next question button
 var nextQuestionButton = document.getElementById("next-question")
@@ -40,9 +40,10 @@ var scoreScreen = document.getElementById("score-screen");
 // variable to make sure question index starts at 0 so the quiz begins with the first question in array
 var currentQuestionIndex = 0
 //creating a let to define later as the current question as the user goes through them
-let currentQuestion
+
 // timer variable
 // timer countdown variable
+var timeLeft = 60;
 
 
 
@@ -70,6 +71,8 @@ var questions = [
     },
 ]
 
+let currentQuestion = questions[currentQuestionIndex]
+
 // listen for the user to click 'Start' to begin quiz
 startBtn.addEventListener('click', beginQuiz);
 
@@ -89,24 +92,54 @@ function beginQuiz() {
 
 // puts the random qauestion picked on the page
 function showQuestion(question) {
-    questionEl.innerText = question.question
-    array.forEach(choices => {
-        answerButton1.innerText = question.choices(0)
+    console.log(currentQuestionIndex)
+    console.log(question)
+    if (currentQuestionIndex >= 3) {
+        endQuiz();
+    } else {
+    answerButton1.textContent = question.choices[0]
+    answerButton2.textContent = question.choices[1]
+    answerButton3.textContent = question.choices[2]
+    answerButton4.textContent = question.choices[3]
+    questionEl.textContent = question.question
+    answerButton1.onclick = questionClick
+    answerButton2.onclick = questionClick
+    answerButton3.onclick = questionClick
+    answerButton4.onclick = questionClick
+}
+    
+    // questionEl.innerText = question.question
+    // // array.forEach(choices => {
+    // //     answerButton1.innerText = question.choices(0)
         
-    });
+    // });
     }
+
+function questionClick() {
+    if (this.textContent !== questions[currentQuestionIndex].answer) {
+        console.log("incorrect")
+        timeLeft -= 15
+    }
+    currentQuestionIndex++
+    showQuestion(questions[currentQuestionIndex])
+    console.log("working")
+}    
 
 // function to start a timer count
 // sets a var to the total time for the quiz    
 function startTimer() {
     // Sets timer
-    var timeLeft = 11;
     setInterval(function() {
     timeLeft--;
     if (timeLeft >= 0) {
     timerArea.textContent = timeLeft;
     }
         }, 1000);
+}
+
+function endQuiz() {
+    // end timer. remaining time is score
+
 }
     // for each for question.choices
     // make a button for each choice
