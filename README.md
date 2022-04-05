@@ -1,4 +1,4 @@
-# Quiz-Game
+# Quiz Game
 
 ![quiz game screenshot](assets/images/quizscreenshot.png)
 
@@ -9,3 +9,8 @@
 - multiple question quiz game with timer
 - score keeping based on time left and right/wrong answers
 - work in progress on functionality
+
+---
+## [repo](https://github.com/johnatticus/Quiz-Game)
+
+## [live link](https://johnatticus.github.io/Quiz-Game/)
