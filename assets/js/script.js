@@ -129,7 +129,7 @@ function questionClick() {
 // sets a var to the total time for the quiz    
 function startTimer() {
     // Sets timer
-    setInterval(function() {
+    myTimer = setInterval(function() {
     timeLeft--;
     if (timeLeft >= 0) {
     timerArea.textContent = timeLeft;
@@ -137,9 +137,11 @@ function startTimer() {
         }, 1000);
 }
 
+// function to run when quiz is over
+// first the timer is stopped
+// the quiz area is set to hidden and the score screen is set to display
 function endQuiz() {
-    // end timer. remaining time is score
-    clearInterval(setInterval)
+    clearTimeout(myTimer)
     quizBegin.classList.add('hide')
     scoreScreen.classList.remove('hide')
 
