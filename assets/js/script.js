@@ -31,6 +31,7 @@ var yesNo = document.getElementById("yes-no")
 var timerArea = document.getElementById("timeleft");
 
 // high score vars
+var yourScore = document.getElementById("final-score");
 var initialsEl = document.getElementById("initials");
 var submitBtn = document.getElementById("submit");
 
@@ -126,13 +127,15 @@ function questionClick() {
 }    
 
 // function to start a timer count
-// sets a var to the total time for the quiz    
 function startTimer() {
     // Sets timer
     myTimer = setInterval(function() {
     timeLeft--;
     if (timeLeft >= 0) {
-    timerArea.textContent = timeLeft;
+        timerArea.textContent = timeLeft;
+    }
+    if (timeLeft <= 0) {
+        endQuiz()
     }
         }, 1000);
 }
@@ -141,10 +144,16 @@ function startTimer() {
 // first the timer is stopped
 // the quiz area is set to hidden and the score screen is set to display
 function endQuiz() {
+    console.log(timeLeft)
     clearTimeout(myTimer)
     quizBegin.classList.add('hide')
     scoreScreen.classList.remove('hide')
+}
 
+// function to write a final score. does not work unfortunately
+function finalScore() {
+    var myScore = timeLeft
+    yourScore.textContent = myScore
 
 }
     // for each for question.choices
