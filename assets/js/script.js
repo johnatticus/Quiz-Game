@@ -44,6 +44,7 @@ var currentQuestionIndex = 0
 
 // timer variable with total time value
 var timeLeft = 45;
+var myScore
 
 
 
@@ -115,11 +116,11 @@ function showQuestion(question) {
 // function to determine is the right or wrong answer was picked
 function questionClick() {
     if (this.textContent !== questions[currentQuestionIndex].answer) {
-        console.log("incorrect")
+        console.log("INCORRECT")
         timeLeft -= 15
     }
     if (this.textContent === questions[currentQuestionIndex].answer) [
-        console.log("CORRECTTTTT")
+        console.log("CORRECT")
     ]
     currentQuestionIndex++
     showQuestion(questions[currentQuestionIndex])
@@ -144,15 +145,18 @@ function startTimer() {
 // first the timer is stopped
 // the quiz area is set to hidden and the score screen is set to display
 function endQuiz() {
+    finalScore()
     console.log(timeLeft)
     clearTimeout(myTimer)
     quizBegin.classList.add('hide')
     scoreScreen.classList.remove('hide')
+    
 }
 
 // function to write a final score. does not work unfortunately
 function finalScore() {
-    var myScore = timeLeft
+    localStorage.setItem("finalTimeScore", JSON.stringify(timeLeft));
+    var myScore = JSON.parse(localStorage.getItem("finalTimeScore"))
     yourScore.textContent = myScore
 
 }
@@ -163,3 +167,4 @@ function finalScore() {
     
 
 // function to create the score and push it to high score
+
