@@ -51,3 +51,12 @@ var questions = [
     //     answerButton1.innerText = question.choices(0)
         
     });
+
+
+
+    function showHighScores() {
+    quizBegin.classList.add('hide')
+    scoreScreen.classList.add('hide')
+    startScreen.classList.add('hide')
+    highScoreList.classList.remove('hide')
+}

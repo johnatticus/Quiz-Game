@@ -34,8 +34,10 @@ var timerArea = document.getElementById("timeleft");
 var yourScore = document.getElementById("final-score");
 var initialsEl = document.getElementById("initials");
 var submitBtn = document.getElementById("submit");
-
-// view high scores
+var highScores = document.getElementById("high-scores")
+var highScoreList = document.getElementById("highscores")
+var backToStart = document.getElementById("show-start-screen")
+// view post game screen
 var scoreScreen = document.getElementById("score-screen");
 
 // variable to make sure question index starts at 0 so the quiz begins with the first question in array
@@ -78,6 +80,11 @@ let currentQuestion = questions[currentQuestionIndex]
 // listen for the user to click 'Start' to begin quiz
 startBtn.addEventListener('click', beginQuiz);
 
+// event listener for viewing high score list
+highScoreList.addEventListener('click', showHighScores);
+
+//event listener for going back to the start screen
+backToStart.addEventListener('click', showStartScreen);
 
 // function to start the timer and bring up the first question
 // hides the start area aka startScreen and un-hides the quest area aka quizBegin
@@ -160,11 +167,22 @@ function finalScore() {
     yourScore.textContent = myScore
 
 }
-    // for each for question.choices
-    // make a button for each choice
-    // give each button a value of correct answer
-
-    
 
 // function to create the score and push it to high score
+function addHighScore() {
 
+}
+
+function showHighScores() {
+    highScores.classList.remove('hide')
+    quizBegin.classList.add('hide')
+    scoreScreen.classList.add('hide')
+    startScreen.classList.add('hide')
+}
+
+function showStartScreen() {
+    highScores.classList.add('hide')
+    quizBegin.classList.add('hide')
+    scoreScreen.classList.add('hide')
+    startScreen.classList.remove('hide')
+}

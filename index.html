@@ -9,8 +9,8 @@
 </head>
 
 <header>
-        <div class="highscore">
-            <h2><a href="highscore.html">VIEW HIGH SCORES</a></h2>
+        <div id="highscores" class="high-score-list">
+            <h2>VIEW HIGH SCORES</h2>
         </div>
         <div class="timer">
             <h2>TIME LEFT: <span id="timeleft"></span></h2>
@@ -29,7 +29,7 @@
         </div>
 
         <!-- This is invisible to begin. The random questions appear here -->
-        <div id="quizarea" class=" quizstart hide">
+        <div id="quizarea" class="quizstart hide">
             <h2 id="question"></h2>
                 <div id="answers">
                     <button id="answer-button1">ANSWER 1</button>
@@ -45,6 +45,18 @@
 
             <p>Enter initials for the high score list: <input type="text" id="initials" max="3"/>
                 <button id="submit">Submit Score</button></p>
+        </div>
+
+        <div id="high-scores" class="hide">
+            <h2>HIGH SCORES</h2>
+            <ul>
+                <ol>1</ol>
+                <ol>2</ol>
+                <ol>3</ol>
+                <ol>4</ol>
+                <ol>5</ol>
+            </ul>
+            <button id="show-start-screen">Go Back</button>
         </div>
     </div>
 

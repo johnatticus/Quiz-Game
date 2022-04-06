@@ -61,7 +61,7 @@ img {
     height: 75vh;
 }
 
-.highscore {
+.high-score-list {
     display: flex;
     flex-direction: row;
     margin: 1rem 1rem 1rem 0;
