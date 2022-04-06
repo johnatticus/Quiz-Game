@@ -37,8 +37,10 @@ var submitBtn = document.getElementById("submit");
 var highScores = document.getElementById("high-scores")
 var highScoreList = document.getElementById("highscores")
 var backToStart = document.getElementById("show-start-screen")
+
 // view post game screen
 var scoreScreen = document.getElementById("score-screen");
+var resetGame = document.getElementById("reset")
 
 // variable to make sure question index starts at 0 so the quiz begins with the first question in array
 var currentQuestionIndex = 0
@@ -86,6 +88,8 @@ highScoreList.addEventListener('click', showHighScores);
 //event listener for going back to the start screen
 backToStart.addEventListener('click', showStartScreen);
 
+resetGame.addEventListener('click', beginQuiz);
+
 // function to start the timer and bring up the first question
 // hides the start area aka startScreen and un-hides the quest area aka quizBegin
 // indexes the first question in array to a currentQuestionIndex
@@ -93,6 +97,8 @@ backToStart.addEventListener('click', showStartScreen);
 function beginQuiz() {
     startTimer()
     console.log("Started")
+    scoreScreen.classList.add('hide')
+
     startScreen.classList.add('hide')
     quizBegin.classList.remove('hide')
     currentQuestion = questions[currentQuestionIndex]
