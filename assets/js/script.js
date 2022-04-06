@@ -97,8 +97,6 @@ resetGame.addEventListener('click', beginQuiz);
 function beginQuiz() {
     startTimer()
     console.log("Started")
-    scoreScreen.classList.add('hide')
-
     startScreen.classList.add('hide')
     quizBegin.classList.remove('hide')
     currentQuestion = questions[currentQuestionIndex]

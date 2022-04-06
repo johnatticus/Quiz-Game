@@ -60,3 +60,7 @@ var questions = [
     startScreen.classList.add('hide')
     highScoreList.classList.remove('hide')
 }
+
+
+// event listener for viewing high score list
+highScoreList.addEventListener('click'), showHighScores);
