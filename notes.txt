@@ -43,3 +43,11 @@ var questions = [
         answer: 1
     },
 ]
+
+
+   
+    questionEl.innerText = question.question
+    // array.forEach(choices => {
+    //     answerButton1.innerText = question.choices(0)
+        
+    });

@@ -25,7 +25,7 @@ var answerButton4 = document.getElementById("answer-button4")
 var nextQuestionButton = document.getElementById("next-question")
 
 // show YES or NO when a answer choice is picked
-var yesOrNo = document.getElementById("yes-no")
+var yesNo = document.getElementById("yes-no")
 
 // time variable
 var timerArea = document.getElementById("timeleft");
@@ -41,9 +41,8 @@ var scoreScreen = document.getElementById("score-screen");
 var currentQuestionIndex = 0
 //creating a let to define later as the current question as the user goes through them
 
-// timer variable
-// timer countdown variable
-var timeLeft = 60;
+// timer variable with total time value
+var timeLeft = 45;
 
 
 
@@ -66,11 +65,12 @@ var questions = [
     },
     {
         question: "Who can defeat Gonzo?",
-        choices: ["No One", "Mike Tyson", "Liam Neeson", "A Pitbull"],
+        choices: ["No One", "Mike Tyson", "Liam Neeson", "His Vet"],
         answer: "No One"
     },
 ]
 
+// variable for the current question
 let currentQuestion = questions[currentQuestionIndex]
 
 // listen for the user to click 'Start' to begin quiz
@@ -90,12 +90,14 @@ function beginQuiz() {
     showQuestion(currentQuestion)
 }
 
-// puts the random qauestion picked on the page
+// shows the current question, which is indexed, and its possible answers
 function showQuestion(question) {
     console.log(currentQuestionIndex)
     console.log(question)
-    if (currentQuestionIndex >= 3) {
+    // if there are no questions left go to endQuiz function
+    if (currentQuestionIndex >= 4) {
         endQuiz();
+    // otherwise, run through all the questions and answers
     } else {
     answerButton1.textContent = question.choices[0]
     answerButton2.textContent = question.choices[1]
@@ -106,20 +108,18 @@ function showQuestion(question) {
     answerButton2.onclick = questionClick
     answerButton3.onclick = questionClick
     answerButton4.onclick = questionClick
-}
-    
-    // questionEl.innerText = question.question
-    // // array.forEach(choices => {
-    // //     answerButton1.innerText = question.choices(0)
-        
-    // });
     }
+}
 
+// function to determine is the right or wrong answer was picked
 function questionClick() {
     if (this.textContent !== questions[currentQuestionIndex].answer) {
         console.log("incorrect")
         timeLeft -= 15
     }
+    if (this.textContent === questions[currentQuestionIndex].answer) [
+        console.log("CORRECTTTTT")
+    ]
     currentQuestionIndex++
     showQuestion(questions[currentQuestionIndex])
     console.log("working")
@@ -139,6 +139,10 @@ function startTimer() {
 
 function endQuiz() {
     // end timer. remaining time is score
+    clearInterval(setInterval)
+    quizBegin.classList.add('hide')
+    scoreScreen.classList.remove('hide')
+
 
 }
     // for each for question.choices
