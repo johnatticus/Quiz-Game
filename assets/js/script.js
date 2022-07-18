@@ -8,7 +8,7 @@
 
 // start screen variables
 var startScreen = document.getElementById("startscreen");
-var startBtn = document.getElementById("start");
+var startBtn = document.getElementById("start-button");
 
 // quiz variables
 var quizBegin = document.getElementById("quizarea");
@@ -62,7 +62,12 @@ var questions = [
     {
         question: "What is Gonzo's favorite food?",
         choices: ["Blue Buffalo Dry Food", "Fresh Pet", "Chocolate Cake", "String Cheese"],
-        answer: "Fresh Pet"
+        answer: "String Cheese"
+    },
+    {
+        question: "Who is Gonzo's favorite professional wrestler?",
+        choices: ["Jinder Mahal", "Stone Cold Steve Austin", "Brock Lesnar", "The Rock"],
+        answer: "Brock Lesnar"
     },
     {
         question: "What does Gonzo like most?",
@@ -72,7 +77,7 @@ var questions = [
     {
         question: "Who can defeat Gonzo?",
         choices: ["No One", "Mike Tyson", "Liam Neeson", "His Vet"],
-        answer: "No One"
+        answer: "His Vet"
     },
 ]
 
@@ -81,6 +86,8 @@ let currentQuestion = questions[currentQuestionIndex]
 
 // listen for the user to click 'Start' to begin quiz
 startBtn.addEventListener('click', beginQuiz);
+
+submitBtn.addEventListener('click', addHighScore);
 
 // event listener for viewing high score list
 highScoreList.addEventListener('click', showHighScores);
@@ -108,7 +115,7 @@ function showQuestion(question) {
     console.log(currentQuestionIndex)
     console.log(question)
     // if there are no questions left go to endQuiz function
-    if (currentQuestionIndex >= 4) {
+    if (currentQuestionIndex >= 5) {
         endQuiz();
     // otherwise, run through all the questions and answers
     } else {
@@ -128,7 +135,7 @@ function showQuestion(question) {
 function questionClick() {
     if (this.textContent !== questions[currentQuestionIndex].answer) {
         console.log("INCORRECT")
-        timeLeft -= 15
+        timeLeft -= 10
     }
     if (this.textContent === questions[currentQuestionIndex].answer) [
         console.log("CORRECT")
@@ -156,28 +163,72 @@ function startTimer() {
 // first the timer is stopped
 // the quiz area is set to hidden and the score screen is set to display
 function endQuiz() {
-    finalScore()
     console.log(timeLeft)
     clearTimeout(myTimer)
+    addHighScore()
     quizBegin.classList.add('hide')
     scoreScreen.classList.remove('hide')
+
+    var finalScoreEl = document.getElementById("final-score");
+    finalScoreEl.textContent = timeLeft;
+
     
 }
 
 // function to write a final score. does not work unfortunately
-function finalScore() {
-    localStorage.setItem("finalTimeScore", JSON.stringify(timeLeft));
-    var myScore = JSON.parse(localStorage.getItem("finalTimeScore"))
-    yourScore.textContent = myScore
+// function finalScore() {
+//     localStorage.setItem("finalTimeScore", JSON.stringify(timeLeft));
+//     var myScore = JSON.parse(localStorage.getItem("finalTimeScore"))
+//     yourScore.textContent = myScore
 
-}
+// }
 
 // function to create the score and push it to high score
 function addHighScore() {
+    // event.preventDefault();
 
+    var initialsText = initialsEl.value.trim();
+
+    if (initialsText === "") {
+        return;
+      }
+
+    if (initialsText !== "") {
+      var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+
+    var newHighScore = {
+        score: timeLeft,
+        initials: initialsText
+      };
+  
+      // save to localstorage
+      highscores.push(newHighScore);
+      window.localStorage.setItem("highscores", JSON.stringify(highscores));
+  
+      // redirect to next page
+    //   window.location.href = "highscores.html";
+    }
 }
 
 function showHighScores() {
+
+    var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+
+  // sort highscores by score property in descending order
+  highscores.sort(function(a, b) {
+    return b.score - a.score;
+  });
+
+  highscores.forEach(function(score) {
+    // create li tag for each high score
+    var liTag = document.createElement("li");
+    liTag.textContent = score.initials + " - " + score.score;
+
+    // display on page
+    var olEl = document.getElementById("high-score-list");
+    olEl.appendChild(liTag);
+  });
+
     highScores.classList.remove('hide')
     quizBegin.classList.add('hide')
     scoreScreen.classList.add('hide')
