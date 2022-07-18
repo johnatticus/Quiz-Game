@@ -222,7 +222,7 @@ function showHighScores() {
   highscores.forEach(function(score) {
     // create li tag for each high score
     var liTag = document.createElement("li");
-    liTag.textContent = score.initials + " - " + score.score;
+    liTag.textContent = score.initials + ": " + score.score;
 
     // display on page
     var olEl = document.getElementById("high-score-list");
