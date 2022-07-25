@@ -27,6 +27,10 @@ var nextQuestionButton = document.getElementById("next-question")
 // show YES or NO when a answer choice is picked
 var yesNo = document.getElementById("yes-no")
 
+// sound fx
+var soundRight = new Audio("assets/sounds/right.wav");
+var soundWrong = new Audio("assets/sounds/wrong.wav");
+
 // time variable
 var timerArea = document.getElementById("timeleft");
 
@@ -136,10 +140,12 @@ function questionClick() {
     if (this.textContent !== questions[currentQuestionIndex].answer) {
         console.log("INCORRECT")
         timeLeft -= 10
+        soundWrong.play();
     }
-    if (this.textContent === questions[currentQuestionIndex].answer) [
+    if (this.textContent === questions[currentQuestionIndex].answer) {
         console.log("CORRECT")
-    ]
+        soundRight.play();
+    }
     currentQuestionIndex++
     showQuestion(questions[currentQuestionIndex])
     console.log("working")
