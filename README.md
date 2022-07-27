@@ -1,6 +1,6 @@
 # Quiz Game
 
-![quiz game screenshot](assets/images/quizscreenshot.png)
+![quiz game screenshot](https://raw.githubusercontent.com/johnatticus/Quiz-Game/main/assets/images/quizscreenshot.png)
 
 ## a multi-choice quiz game project
 
