@@ -5,15 +5,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
-    <title>A Quiz Game</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
+
+    <title>A Gonzo Quiz</title>
 </head>
 
 <header>
-        <div id="highscores" class="high-score-list">
+        <div id="highscores" class="highscore-box">
             <h2>VIEW HIGH SCORES</h2>
         </div>
-        <div class="timer">
-            <h2>TIME LEFT: <span id="timeleft"></span></h2>
+        <div class="timer-box">
+            <h2>TIME LEFT: <span id="timeleft">45</span></h2>
         </div>
 </header>
 
@@ -44,8 +48,8 @@
             <p>Your final score is: <span id="final-score"></span></p>
 
             <p>Enter initials for the high score list: <input type="text" id="initials" max="3">
-                <button id="submit">Submit Score</button>
-                <a href="index.html"><button id="reset">Start Over</button></p></a>
+                <button class="custom-button" id="submit">Submit Score</button>
+                <a href="index.html"><button class="custom-button" id="reset">Start Over</button></p></a>
         </div>
 
         <div class="high-score-custom hide" id="high-scores">

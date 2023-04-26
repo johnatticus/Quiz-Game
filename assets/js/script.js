@@ -28,8 +28,8 @@ var nextQuestionButton = document.getElementById("next-question")
 var yesNo = document.getElementById("yes-no")
 
 // sound fx
-var soundRight = new Audio("assets/sounds/right.wav");
-var soundWrong = new Audio("assets/sounds/wrong.wav");
+var soundRight = new Audio("assets/sounds/positive.mp3");
+var soundWrong = new Audio("assets/sounds/negative.mp3");
 
 // time variable
 var timerArea = document.getElementById("timeleft");

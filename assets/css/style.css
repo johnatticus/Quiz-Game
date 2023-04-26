@@ -11,15 +11,14 @@ body {
     background-size: cover;
     background-position: center;
     /* max-width: 75%; */
-   
-    
+    font-family: 'Coming Soon', cursive;
 }
 
 header {
     display: flex;
     flex-direction: row;
-    width: 100vh;
-    max-width: 75%;
+    width: 60vw;
+    /* max-width: 75%; */
     justify-content: center;
     
 }
@@ -57,19 +56,19 @@ img {
     max-width: 75%;
     box-shadow: 5px 5px;
     border: 2px solid black;
-    width: 100vh;
-    height: 75vh;
+    width: 60vw;
+    /* height: 75vh; */
 }
 
 .high-score-custom {
     display: flex;
     flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    align-items:center;
+    justify-content: space-between;
     width: 100%;
 }
 
-.high-score-list {
+.highscore-box {
     display: flex;
     flex-direction: row;
     margin: 1rem 1rem 1rem 0;
@@ -80,10 +79,11 @@ img {
     border: 2px solid black;
     border-radius: 10px;
     box-shadow: 5px 5px;
-    width: 50vh;
+    width: 50vw;
+    cursor: pointer;
 }
 
-.timer {
+.timer-box {
     display: flex;
     flex-direction: row;
     margin: 1rem 0 1rem 1rem;
@@ -94,7 +94,7 @@ img {
     border: 2px solid black;
     border-radius: 10px;
     box-shadow: 5px 5px;
-    width: 50vh;
+    width: 50vw;
 
 }
 
@@ -114,8 +114,10 @@ img {
     border-radius: 5px;
     background-color: rgb(255, 0, 0);
     color: white;
-    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    font-size: medium;
+    cursor: pointer;
+    font-size: large;
+    font-family: 'Coming Soon', cursive;
+    letter-spacing: 2px;
 }
 
 .hide {
