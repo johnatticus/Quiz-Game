@@ -11,7 +11,7 @@
 
     <title>A Gonzo Quiz</title>
 </head>
-
+<body>
 <header>
         <div id="highscores" class="highscore-box">
             <h2>VIEW HIGH SCORES</h2>
@@ -20,18 +20,15 @@
             <h2>TIME LEFT: <span id="timeleft">45</span></h2>
         </div>
 </header>
-
-<body>
-    <div class="container">
+<div class="container">
         
         <!-- The start screen when the quiz index is opened -->
         <div id="startscreen" class="quizstart">
-            <img src="assets/images/gonzo.png" alt="Gonzo" width="300px" height="300px"> 
+            <img src="assets/images/gonzo.png" alt="Gonzo">
             <h1>HOW WELL DO YOU KNOW GONZO?</h1>
             <p>Do you think you know my dog? Let us find out.</p>
             <button class="custom-button" id="start-button">START</button>
         </div>
-
         <!-- This is invisible to begin. The random questions appear here -->
         <div id="quizarea" class="quizstart hide">
             <h2 id="question"></h2>
@@ -58,12 +55,11 @@
             </ol>
             <a href="index.html"><button class="custom-button" id="show-start-screen">Go Back</button></a>
         </div>
-    </div>
 
     <div class="right-wrong">
         <h2 id="yes-no"></h2>
     </div>
-
+</div>
     <script src="assets/js/script.js"></script>
 </body>
 </html>

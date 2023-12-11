@@ -1,63 +1,51 @@
-// any global variables needed
-// var questionsIndex = 0;
-
-// var time = questions.length * 15;
-// for keeping a timer and score?
-// var timerId;
-
-
 // start screen variables
-var startScreen = document.getElementById("startscreen");
-var startBtn = document.getElementById("start-button");
+let startScreen = document.getElementById("startscreen");
+let startBtn = document.getElementById("start-button");
 
 // quiz variables
-var quizBegin = document.getElementById("quizarea");
-var questionEl = document.getElementById("question")
-var answerChoices = document.getElementById("answers") // this may be redundant due to 4 answer buttons used
+let quizBegin = document.getElementById("quizarea");
+let questionEl = document.getElementById("question")
 
 // var for the four answer buttons
-var answerButton1 = document.getElementById("answer-button1")
-var answerButton2 = document.getElementById("answer-button2")
-var answerButton3 = document.getElementById("answer-button3")
-var answerButton4 = document.getElementById("answer-button4")
-
-// next question button
-var nextQuestionButton = document.getElementById("next-question")
+let answerButton1 = document.getElementById("answer-button1")
+let answerButton2 = document.getElementById("answer-button2")
+let answerButton3 = document.getElementById("answer-button3")
+let answerButton4 = document.getElementById("answer-button4")
 
 // show YES or NO when a answer choice is picked
-var yesNo = document.getElementById("yes-no")
+let yesNo = document.getElementById("yes-no")
 
 // sound fx
-var soundRight = new Audio("assets/sounds/positive.mp3");
-var soundWrong = new Audio("assets/sounds/negative.mp3");
+let soundRight = new Audio("assets/sounds/positive.mp3");
+let soundWrong = new Audio("assets/sounds/negative.mp3");
 
 // time variable
-var timerArea = document.getElementById("timeleft");
+let timerArea = document.getElementById("timeleft");
 
 // high score vars
-var yourScore = document.getElementById("final-score");
-var initialsEl = document.getElementById("initials");
-var submitBtn = document.getElementById("submit");
-var highScores = document.getElementById("high-scores")
-var highScoreList = document.getElementById("highscores")
+let yourScore = document.getElementById("final-score");
+let initialsEl = document.getElementById("initials");
+let submitBtn = document.getElementById("submit");
+let highScores = document.getElementById("high-scores")
+let highScoreList = document.getElementById("highscores")
 // var backToStart = document.getElementById("show-start-screen")
 
 // view post game screen
-var scoreScreen = document.getElementById("score-screen");
+let scoreScreen = document.getElementById("score-screen");
 // var resetGame = document.getElementById("reset")
 
 // variable to make sure question index starts at 0 so the quiz begins with the first question in array
-var currentQuestionIndex = 0
+let currentQuestionIndex = 0
 //creating a let to define later as the current question as the user goes through them
 
 // timer variable with total time value
-var timeLeft = 45;
-var myScore
+let timeLeft = 45;
+let myScore
 
 
 
 // questions for the quiz
-var questions = [
+let questions = [
     {
         question: "What is Gonzo's preferred nickname?",
         choices: ["Nana", "Pingo", "Nano", "The Gonz"],
@@ -175,7 +163,7 @@ function endQuiz() {
     quizBegin.classList.add('hide')
     scoreScreen.classList.remove('hide')
 
-    var finalScoreEl = document.getElementById("final-score");
+    let finalScoreEl = document.getElementById("final-score");
     finalScoreEl.textContent = timeLeft;
 
     
@@ -193,16 +181,16 @@ function endQuiz() {
 function addHighScore() {
     // event.preventDefault();
 
-    var initialsText = initialsEl.value.trim();
+    let initialsText = initialsEl.value.trim();
 
     if (initialsText === "") {
         return;
       }
 
     if (initialsText !== "") {
-      var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+      let highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
 
-    var newHighScore = {
+    let newHighScore = {
         score: timeLeft,
         initials: initialsText
       };
@@ -220,7 +208,7 @@ function addHighScore() {
 
 function showHighScores() {
 
-    var highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
+    let highscores = JSON.parse(window.localStorage.getItem("highscores")) || [];
 
   // sort highscores by score property in descending order
   highscores.sort(function(a, b) {
@@ -229,11 +217,11 @@ function showHighScores() {
 
   highscores.forEach(function(score) {
     // create li tag for each high score
-    var liTag = document.createElement("li");
+    let liTag = document.createElement("li");
     liTag.textContent = score.initials + ": " + score.score;
 
     // display on page
-    var olEl = document.getElementById("high-score-list");
+    let olEl = document.getElementById("high-score-list");
     olEl.appendChild(liTag);
   });
 

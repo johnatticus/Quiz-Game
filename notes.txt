@@ -1,3 +1,12 @@
+// any global variables needed
+// var questionsIndex = 0;
+
+// var time = questions.length * 15;
+// for keeping a timer and score?
+// var timerId;
+
+
+
 OLD CODE I REMOVED BUT WANTED TO REFERENCE
 
 //function to get the questions
