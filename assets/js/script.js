@@ -18,6 +18,8 @@ let yesNo = document.getElementById("yes-no")
 // sound fx
 let soundRight = new Audio("assets/sounds/positive.mp3");
 let soundWrong = new Audio("assets/sounds/negative.mp3");
+soundRight.volume = 0.35;
+soundWrong.volume = 0.35;
 
 // time variable
 let timerArea = document.getElementById("timeleft");
@@ -40,9 +42,6 @@ let currentQuestionIndex = 0
 
 // timer variable with total time value
 let timeLeft = 45;
-let myScore
-
-
 
 // questions for the quiz
 let questions = [
@@ -76,25 +75,11 @@ let questions = [
 // variable for the current question
 let currentQuestion = questions[currentQuestionIndex]
 
-// listen for the user to click 'Start' to begin quiz
-startBtn.addEventListener('click', beginQuiz);
-
-submitBtn.addEventListener('click', addHighScore);
-
-// event listener for viewing high score list
-highScoreList.addEventListener('click', showHighScores);
-
-//event listener for going back to the start screen
-backToStart.addEventListener('click', showStartScreen);
-
-resetGame.addEventListener('click', showStartScreen);
-
 // function to start the timer and bring up the first question
 // hides the start area aka startScreen and un-hides the quest area aka quizBegin
 // indexes the first question in array to a currentQuestionIndex
 // moves to next function that writes the current question to the html
 function beginQuiz() {
-    startTimer()
     console.log("Started")
     startScreen.classList.add('hide')
     quizBegin.classList.remove('hide')
@@ -127,7 +112,7 @@ function showQuestion(question) {
 function questionClick() {
     if (this.textContent !== questions[currentQuestionIndex].answer) {
         console.log("INCORRECT")
-        timeLeft -= 10
+        timeLeft -= 5
         soundWrong.play();
     }
     if (this.textContent === questions[currentQuestionIndex].answer) {
@@ -154,9 +139,10 @@ function startTimer() {
 }
 
 // function to run when quiz is over
-// first the timer is stopped
+// first the timer text content is updated and the timer is stopped
 // the quiz area is set to hidden and the score screen is set to display
 function endQuiz() {
+    timerArea.textContent = timeLeft;
     console.log(timeLeft)
     clearTimeout(myTimer)
     addHighScore()
@@ -168,14 +154,6 @@ function endQuiz() {
 
     
 }
-
-// function to write a final score. does not work unfortunately
-// function finalScore() {
-//     localStorage.setItem("finalTimeScore", JSON.stringify(timeLeft));
-//     var myScore = JSON.parse(localStorage.getItem("finalTimeScore"))
-//     yourScore.textContent = myScore
-
-// }
 
 // function to create the score and push it to high score
 function addHighScore() {
@@ -202,7 +180,7 @@ function addHighScore() {
       // redirect to next page
     //   window.location.href = "index.html";
 
-      showHighScores();
+      window.location.href('/../highscores.html')
     }
 }
 
@@ -237,3 +215,21 @@ function showStartScreen() {
     scoreScreen.classList.add('hide')
     startScreen.classList.remove('hide')
 }
+
+// listen for the user to click 'Start' to begin quiz
+startBtn.addEventListener('click', function(event) {
+    event.preventDefault();
+    startTimer();
+    beginQuiz();
+})
+
+submitBtn.addEventListener('click', addHighScore);
+
+// event listener for viewing high score list
+highScoreList.addEventListener('click', showHighScores);
+
+//event listener for going back to the start screen and is not implemented
+backToStart.addEventListener('click', showStartScreen);
+
+// this one is not used either
+resetGame.addEventListener('click', showStartScreen);

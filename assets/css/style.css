@@ -103,10 +103,36 @@ header {
     width: 100%;
 }
 
+#high-score-list {
+    font-size: large;
+}
+
 .custom-button {
     border: 1px solid black;
     border-radius: 5px;
     background-color: rgb(255, 0, 0);
+    color: white;
+    cursor: pointer;
+    font-size: large;
+    font-family: 'Coming Soon', cursive;
+    letter-spacing: 2px;
+}
+
+#submit {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: rgb(255, 0, 0);
+    color: white;
+    cursor: pointer;
+    font-size: medium;
+    font-family: 'Coming Soon', cursive;
+    letter-spacing: 2px;
+}
+
+.answer-buttons {
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: black;
     color: white;
     cursor: pointer;
     font-size: large;

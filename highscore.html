@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="./assets/css/style.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Coming+Soon&display=swap" rel="stylesheet">
+
+    <title>A Gonzo Quiz</title>
+</head>
+<body>
+<header>
+        <div id="highscores" class="highscore-box">
+            <h2>VIEW HIGH SCORES</h2>
+        </div>
+        <div class="timer-box">
+            <h2>TIME LEFT: <span id="timeleft"></span></h2>
+        </div>
+</header>
+<div class="container">
+        <div class="high-score-custom" id="high-scores">
+            <h2>HIGH SCORES</h2>
+            <ol id="high-score-list">
+            </ol>
+            <a href="index.html"><button class="custom-button" id="show-start-screen">Go Back</button></a>
+        </div>
+
+    <div class="right-wrong">
+        <h2 id="yes-no"></h2>
+    </div>
+</div>
+    <script src="assets/js/highscores.js"></script>
+</body>
+</html>
